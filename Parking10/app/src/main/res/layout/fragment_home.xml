@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+   <LinearLayout
+       android:id="@+id/linearLayout3"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:orientation="vertical">
+      <!--layout_1 搜索框和定位框-->
+      <LinearLayout
+          android:id="@+id/layout_1"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:orientation="horizontal"
+          tools:ignore="MissingConstraints">
+
+         <SearchView
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:iconifiedByDefault="false"
+             android:isScrollContainer="false"
+             tools:visibility="visible" />
+      </LinearLayout>
+      <!--leLayout_1 搜索框和定位框-->
+      <!--layout_2 排序&&选择-->
+      <LinearLayout
+          android:id="@+id/layout_2"
+          android:layout_width="match_parent"
+          android:layout_height="39dp"
+          android:orientation="horizontal"
+          tools:ignore="MissingConstraints">
+
+         <Spinner
+             android:id="@+id/spinnerSort1"
+             android:layout_width="130dp"
+             android:layout_height="40dp"
+             android:entries="@array/sort1"
+             android:spinnerMode="dropdown"
+             tools:layout_editor_absoluteX="3dp"
+             tools:layout_editor_absoluteY="92dp" />
+
+         <Spinner
+             android:id="@+id/spinnerSort2"
+             android:layout_width="130dp"
+             android:layout_height="40dp"
+             android:entries="@array/sort2"
+             android:spinnerMode="dropdown"
+             tools:layout_editor_absoluteX="3dp"
+             tools:layout_editor_absoluteY="92dp" />
+
+         <Spinner
+             android:id="@+id/spinnerSort3"
+             android:layout_width="130dp"
+             android:layout_height="40dp"
+             android:entries="@array/sort3"
+             android:spinnerMode="dropdown"
+             tools:layout_editor_absoluteX="3dp"
+             tools:layout_editor_absoluteY="92dp" />
+      </LinearLayout>
+      <!--layout_2 排序&&选择-->
+      <!--layout_3 展现结果-->
+
+      <LinearLayout
+          android:id="@+id/layout_3"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:isScrollContainer="true"
+          android:orientation="vertical"
+          tools:ignore="MissingConstraints">
+
+      </LinearLayout>
+
+   </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
