@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.parking10.MainActivity;
 import com.example.parking10.R;
 import com.example.parking10.ui.login.LoginViewModel;
 import com.example.parking10.ui.login.LoginViewModelFactory;
@@ -55,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (loginFormState.getPasswordError() != null) {
                     passwordEditText.setError(getString(loginFormState.getPasswordError()));
                 }
+
             }
         });
 
@@ -73,6 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 setResult(Activity.RESULT_OK);
 
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 //Complete and destroy login activity once successful
                 finish();
             }

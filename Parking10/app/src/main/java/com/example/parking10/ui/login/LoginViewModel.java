@@ -4,12 +4,16 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import android.content.Intent;
 import android.util.Patterns;
 
+import com.example.parking10.MainActivity;
 import com.example.parking10.data.LoginRepository;
 import com.example.parking10.data.Result;
 import com.example.parking10.data.model.LoggedInUser;
 import com.example.parking10.R;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 public class LoginViewModel extends ViewModel {
 
@@ -36,6 +40,7 @@ public class LoginViewModel extends ViewModel {
         if (result instanceof Result.Success) {
             LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
             loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName())));
+
         } else {
             loginResult.setValue(new LoginResult(R.string.login_failed));
         }
